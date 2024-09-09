@@ -1,0 +1,38 @@
+version: '3.3'
+
+services:
+  mqtt-broker:
+    image: eclipse-mosquitto
+    container_name: mqtt-broker
+    ports:
+      - "1883:1883"
+    volumes:
+      - /home/guilherme/trab2SD/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    tty: true
+
+  almoxarifado:
+    build: ./almoxarifado
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+    tty: true
+
+  linha-producao:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+    tty: true
+
+  fornecedor:
+    build: ./fornecedor
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+    tty: true
