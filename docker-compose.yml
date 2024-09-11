@@ -10,29 +10,185 @@ services:
       - /home/guilherme/trab2SD/mosquitto.conf:/mosquitto/config/mosquitto.conf
     tty: true
 
-  almoxarifado:
+  almoxarifado_fabrica_1:
     build: ./almoxarifado
     depends_on:
       - mqtt-broker
     environment:
       BROKER: mqtt-broker
       PORT: 1883
+      FABRICA_ID: fabrica_1
     tty: true
 
-  linha-producao:
+  linha-producao_fabrica_1_linha_1:
     build: ./linhaProducao
     depends_on:
       - mqtt-broker
     environment:
       BROKER: mqtt-broker
       PORT: 1883
+      FABRICA_ID: fabrica_1
+      LINHA_ID: linha_1
     tty: true
 
-  fornecedor:
+  linha-producao_fabrica_1_linha_2:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_1
+      LINHA_ID: linha_2
+    tty: true
+
+  linha-producao_fabrica_1_linha_3:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_1
+      LINHA_ID: linha_3
+    tty: true
+
+  linha-producao_fabrica_1_linha_4:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_1
+      LINHA_ID: linha_4
+    tty: true
+
+  linha-producao_fabrica_1_linha_5:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_1
+      LINHA_ID: linha_5
+    tty: true
+
+  fornecedor_fabrica_1:
     build: ./fornecedor
     depends_on:
       - mqtt-broker
     environment:
       BROKER: mqtt-broker
       PORT: 1883
+      FABRICA_ID: fabrica_1
+    tty: true
+
+  almoxarifado_fabrica_2:
+    build: ./almoxarifado
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+    tty: true
+
+  linha-producao_fabrica_2_linha_1:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_1
+    tty: true
+
+  linha-producao_fabrica_2_linha_2:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_2
+    tty: true
+
+  linha-producao_fabrica_2_linha_3:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_3
+    tty: true
+
+  linha-producao_fabrica_2_linha_4:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_4
+    tty: true
+
+  linha-producao_fabrica_2_linha_5:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_5
+    tty: true
+
+  linha-producao_fabrica_2_linha_6:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_6
+    tty: true
+
+  linha-producao_fabrica_2_linha_7:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_7
+    tty: true
+
+  linha-producao_fabrica_2_linha_8:
+    build: ./linhaProducao
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
+      LINHA_ID: linha_8
+    tty: true
+
+  fornecedor_fabrica_2:
+    build: ./fornecedor
+    depends_on:
+      - mqtt-broker
+    environment:
+      BROKER: mqtt-broker
+      PORT: 1883
+      FABRICA_ID: fabrica_2
     tty: true
